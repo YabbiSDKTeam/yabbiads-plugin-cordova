@@ -1,0 +1,19 @@
+{
+  "name": "cordova.plugin.yabbiads",
+  "version": "1.0.0",
+  "description": "YabbiAds plugin for Cordova",
+  "cordova": {
+    "id": "cordova.plugin.yabbiads",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "Yabbi, LLC",
+  "license": "Copyright 2022. Yabbi, LLC."
+}
