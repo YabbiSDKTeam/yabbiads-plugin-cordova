@@ -23,7 +23,14 @@
             <feature name="YabbiAdsPlugin">
                 <param name="ios-package" value="YabbiAdsPlugin" />
             </feature>
+            <preference name="deployment-target" value="12.0" />
         </config-file>
         <source-file src="src/ios/YabbiAdsPlugin.m" />
+        <podspec>
+            <pods use-frameworks="true">
+                <pod name="YabbiAds" />
+            </pods>
+        </podspec>
+        <dependency id="cordova-plugin-add-swift-support" version="2.0.2" />
     </platform>
 </plugin>
