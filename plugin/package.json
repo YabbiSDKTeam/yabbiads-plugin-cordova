@@ -9,11 +9,21 @@
       "ios"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YabbiSDKTeam/yabbiads-plugin-cordova"
+  },
   "keywords": [
+    "yabbi",
+    "yabbiads",
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios"
   ],
   "author": "Yabbi, LLC",
-  "license": "Copyright 2022. Yabbi, LLC."
+  "license": "Copyright 2022. Yabbi, LLC.",
+  "bugs": {
+    "url": "https://github.com/YabbiSDKTeam/yabbiads-plugin-cordova/issues"
+  },
+  "homepage": "https://github.com/YabbiSDKTeam/yabbiads-plugin-cordova#readme"
 }
