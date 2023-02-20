@@ -1,11 +1,15 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
+var YabbiAds;
+
 function onDeviceReady() {
+    YabbiAds = cordova.require('cordova.plugin.yabbiads.YabbiAdsPlugin');
     _init();
 }
 
-
 function _init() {
+    YabbiAds.initialize(EnvVariables.YABBI_PUBLISHER_ID, EnvVariables.YABBI_INTERSTITIAL_ID, EnvVariables.YABBI_REWARDED_ID);
+
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     document.getElementById('load_interstitial').addEventListener("click", _loadInterstitial);
     document.getElementById('show_interstitial').addEventListener("click", _showInterstitial);

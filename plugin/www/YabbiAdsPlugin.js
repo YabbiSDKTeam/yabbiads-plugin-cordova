@@ -1,5 +1,23 @@
 var exec = require('cordova/exec');
+var cordova = require('cordova');
 
-exports.coolMethod = function (arg0, success, error) {
-    exec(success, error, 'YabbiAdsPlugin', 'coolMethod', [arg0]);
-};
+function isFunction(functionObj) {
+    return typeof functionObj === 'function';
+}
+
+function callNative(name, params = [], successCallback = null, errorCallback = null) {
+    cordova.exec(successCallback, errorCallback, 'AppLovinMAX', name, params);
+}
+
+
+var YabbiAds = {
+    initialize: function (publisherId, interstitialId, rewardedId) {
+        console.log("YabbiAds.initialize")
+    }
+}
+
+
+
+if (typeof module !== undefined && module.exports) {
+    module.exports = YabbiAds;
+}
