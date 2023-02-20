@@ -364,3 +364,5 @@ hs_err_pid*
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.toptal.com/developers/gitignore/api/cordova,apachecordova,macos,xcode,gradle,android,androidstudio,jetbrains
+
+example/www/js/env_variables.js

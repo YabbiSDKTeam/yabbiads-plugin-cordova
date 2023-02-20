@@ -1,29 +1,99 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-
-// Wait for the deviceready event before using any of Cordova's device APIs.
-// See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
 document.addEventListener('deviceready', onDeviceReady, false);
 
+var YabbiAds;
+
+const AdType = {
+    INTERSTITIAL: 1,
+    REWARDED: 3,
+};
+
 function onDeviceReady() {
-    // Cordova is now initialized. Have fun!
+    YabbiAds = cordova.require('cordova.plugin.yabbiads.YabbiAdsPlugin');
+    _init();
+}
+
+function _init() {
+    YabbiAds.initialize(EnvVariables.YABBI_PUBLISHER_ID, EnvVariables.YABBI_INTERSTITIAL_ID, EnvVariables.YABBI_REWARDED_ID);
+    YabbiAds.setUserConsent(true);
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    document.getElementById('deviceready').classList.add('ready');
+    document.getElementById('load_interstitial').addEventListener("click", _loadInterstitial);
+    document.getElementById('show_interstitial').addEventListener("click", _showInterstitial);
+    document.getElementById('destroy_interstitial').addEventListener("click", _destroyInterstitial);
+    document.getElementById('load_rewarded').addEventListener("click", _loadRewarded);
+    document.getElementById('show_rewarded').addEventListener("click", _showRewarded);
+    document.getElementById('destroy_rewarded').addEventListener("click", _destroyRewarded);
+
+    _initializeInterstitialListener();
+    _initializeRewardedListener();
+
+}
+
+function _initializeInterstitialListener() {
+    window.addEventListener('onInterstitialLoaded', function (adInfo) {
+        _logEvent('onInterstitialLoaded');
+    });
+    window.addEventListener('onInterstitialLoadFailed', function (adInfo) {
+        _logEvent('onInterstitialLoadFailed');
+    });
+    window.addEventListener('onInterstitialShown', function (adInfo) {
+        _logEvent('onInterstitialShown');
+    });
+    window.addEventListener('onInterstitialShowFailed', function (adInfo) {
+        _logEvent('onInterstitialShowFailed');
+    });
+    window.addEventListener('onInterstitialClosed', function (adInfo) {
+        _logEvent('onInterstitialClosed');
+    });
+}
+
+
+function _initializeRewardedListener() {
+    window.addEventListener('onRewardedLoaded', function (adInfo) {
+        _logEvent('onRewardedLoaded');
+    });
+    window.addEventListener('onRewardedLoadFailed', function (adInfo) {
+        _logEvent('onRewardedLoadFailed');
+    });
+    window.addEventListener('onRewardedShown', function (adInfo) {
+        _logEvent('onRewardedShown');
+    });
+    window.addEventListener('onRewardedShowFailed', function (adInfo) {
+        _logEvent('onRewardedShowFailed');
+    });
+    window.addEventListener('onRewardedClosed', function (adInfo) {
+        _logEvent('onRewardedClosed');
+    });
+    window.addEventListener('onRewardedFinished', function (adInfo) {
+        _logEvent('onRewardedFinished');
+    });
+}
+
+function _loadInterstitial() {
+    YabbiAds.loadAd(AdType.INTERSTITIAL);
+}
+
+function _showInterstitial() {
+    YabbiAds.showAd(AdType.INTERSTITIAL);
+}
+
+function _destroyInterstitial() {
+    YabbiAds.destroyAd(AdType.INTERSTITIAL);
+}
+
+function _loadRewarded() {
+    YabbiAds.loadAd(AdType.REWARDED);
+}
+
+function _showRewarded() {
+    YabbiAds.showAd(AdType.REWARDED);
+}
+
+function _destroyRewarded() {
+    YabbiAds.destroyAd(AdType.REWARDED);
+}
+
+function _logEvent(message) {
+    var logger = document.getElementById('logger');
+    logger.textContent = '${logger.innerHTML}\n ${message}'
 }
