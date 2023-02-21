@@ -109,4 +109,6 @@
  .advert__events {
      font-size: 14px;
      width: 100%;
+     white-space: pre;
+     margin-bottom: 16px;
  }
