@@ -135,7 +135,7 @@ public class YabbiAdsPlugin extends CordovaPlugin implements YbiInterstitialList
         try {
             JSONObject params = new JSONObject();
             params.put("error", error);
-            fireWindowEvent("onInterstitialLoadFail", params);
+            fireWindowEvent("onInterstitialLoadFailed", params);
         } catch (Throwable ignored) {
         }
     }
@@ -170,7 +170,7 @@ public class YabbiAdsPlugin extends CordovaPlugin implements YbiInterstitialList
         try {
             JSONObject params = new JSONObject();
             params.put("error", error);
-            fireWindowEvent("onRewardedLoadFail", params);
+            fireWindowEvent("onRewardedLoadFailed", params);
         } catch (Throwable ignored) {
         }
     }

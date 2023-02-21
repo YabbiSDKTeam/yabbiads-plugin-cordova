@@ -16,7 +16,7 @@
         <source-file src="src/android/YabbiAdsPlugin.java"
             target-dir="src/cordova/plugin/yabbiads/YabbiAdsPlugin" />
         <framework src="src/android/plugin.gradle" custom="true" type="gradleReference" />
-        <framework src="me.yabbi.ads:core:1.3.3" />
+        <framework src="me.yabbi.ads:core:1.3.4" />
     </platform>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
