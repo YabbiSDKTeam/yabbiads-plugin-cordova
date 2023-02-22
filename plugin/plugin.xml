@@ -25,6 +25,7 @@
             </feature>
             <preference name="deployment-target" value="12.0" />
         </config-file>
+        <header-file src="src/ios/YabbiAdsPlugin.h" />
         <source-file src="src/ios/YabbiAdsPlugin.m" />
         <podspec>
             <pods use-frameworks="true">
