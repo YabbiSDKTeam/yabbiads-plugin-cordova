@@ -46,7 +46,7 @@ YabbiAds.initialize('publisher_id','interstitial_id', 'rewarded_id');
 
 Вы можете проверить что плагин инициализирован с помощью метода представленного ниже.
 ```js
-final isInitialized = YabbiAds.isInitialized();
+var isInitialized = YabbiAds.isInitialized();
 
 if(isInitialized) {
  // тут ваш код
@@ -101,7 +101,7 @@ const AdType = {
 
 * Для полноэкранной рекламы.
     ```js
-    final canLoadAd = YabbiAds.canLoadAd(AdType.INTERSTITIAL);
+    var canLoadAd = YabbiAds.canLoadAd(AdType.INTERSTITIAL);
     
     if(canLoadAd) {
         YabbiAds.loadAd(AdType.INTERSTITIAL);
@@ -110,7 +110,7 @@ const AdType = {
 
 * Для полноэкранной рекламы с вознаграждением.
     ```js
-    final canLoadAd = YabbiAds.canLoadAd(AdType.REWARDED);
+    var canLoadAd = YabbiAds.canLoadAd(AdType.REWARDED);
     
     if(canLoadAd) {
         YabbiAds.loadAd(AdType.REWARDED);
@@ -125,7 +125,7 @@ const AdType = {
 
 * Для полноэкранной рекламы.
     ```js
-    final isAdLoaded = YabbiAds.isAdLoaded(AdType.INTERSTITIAL);
+    var isAdLoaded = YabbiAds.isAdLoaded(AdType.INTERSTITIAL);
     
     if(isAdLoaded) {
         YabbiAds.showAd(AdType.INTERSTITIAL);
@@ -134,7 +134,7 @@ const AdType = {
 
 * Для полноэкранной рекламы с вознаграждением.
     ```js
-    final isAdLoaded = YabbiAds.isAdLoaded(AdType.REWARDED);
+    var isAdLoaded = YabbiAds.isAdLoaded(AdType.REWARDED);
     
     if(isAdLoaded) {
         YabbiAds.showAd(AdType.REWARDED);
