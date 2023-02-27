@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova.plugin.yabbiads" version="1.0.0"
+<plugin id="cordova.plugin.yabbiads" version="1.0.5"
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>YabbiAdsPlugin</name>
@@ -12,7 +12,12 @@
                 <param name="android-package" value="cordova.plugin.yabbiads.YabbiAdsPlugin" />
             </feature>
         </config-file>
-        <config-file parent="/*" target="AndroidManifest.xml" />
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!--optional -->
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!--optional -->
+        </config-file>
         <source-file src="src/android/YabbiAdsPlugin.java"
             target-dir="src/cordova/plugin/yabbiads/YabbiAdsPlugin" />
         <framework src="src/android/plugin.gradle" custom="true" type="gradleReference" />

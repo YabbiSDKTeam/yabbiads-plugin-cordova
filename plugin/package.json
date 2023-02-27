@@ -1,6 +1,6 @@
 {
   "name": "cordova.plugin.yabbiads",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "YabbiAds plugin for Cordova",
   "cordova": {
     "id": "cordova.plugin.yabbiads",

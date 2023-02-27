@@ -1,7 +1,7 @@
 var exec = require('cordova/exec');
 var cordova = require('cordova');
 
-const _VERSION = '1.0.0';
+const _VERSION = '1.0.5';
 
 function _isFunction(functionObj) {
     return typeof functionObj === 'function';
@@ -91,7 +91,7 @@ var YabbiAds = {
     canLoadAd(adType) {
         switch (adType) {
             case _AdType.INTERSTITIAL:
-                return this.canLoadInterstitialAd;
+                return this.canLoadInterstitial;
             case _AdType.REWARDED:
                 return this.canLoadRewarded;
             default:
