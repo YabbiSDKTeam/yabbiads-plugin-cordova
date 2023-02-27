@@ -1,112 +1,118 @@
- *,
- *::before,
- *::after {
-     box-sizing: border-box !important;
-     background: none;
-     border: none;
-     box-shadow: none;
-     outline: none;
-     padding: 0;
-     margin: 0;
-     text-decoration: none;
-     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-     /* make transparent link selection, adjust last value opacity 0 to 1.0 */
- }
+*,
+*::before,
+*::after {
+    box-sizing: border-box !important;
+    background: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
 
- body {
-     -webkit-touch-callout: none;
-     /* prevent callout to copy image, etc when tap to hold */
-     -webkit-text-size-adjust: none;
-     /* prevent webkit from resizing text to fit */
-     -webkit-user-select: none;
-     /* prevent copy paste, to allow, change 'none' to 'text' */
-     font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
-     font-size: 18px;
-     color: #767676;
-     height: 100vh;
-     margin: 0px;
-     padding: 0px;
-     /* Padding to avoid the "unsafe" areas behind notches in the screen */
-     padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
-     width: 100%;
-     text-rendering: optimizeSpeed;
-     line-height: 1.5;
-     background: #fff;
- }
+body {
+    -webkit-touch-callout: none;
+    /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;
+    /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;
+    /* prevent copy paste, to allow, change 'none' to 'text' */
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #767676;
+    margin: 0px;
+    padding: 0px;
+    /* Padding to avoid the "unsafe" areas behind notches in the screen */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    width: 100%;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    background: #fff;
+}
 
- img {
-     display: block;
-     width: 100%;
-     height: auto;
- }
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
- article>*+* {
-     margin-top: 1em;
- }
+article>*+* {
+    margin-top: 1em;
+}
 
- input,
- button,
- textarea,
- select {
-     font: inherit;
- }
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
 
- .appbar {
-     background: #E18071;
-     height: 56px;
-     width: 100%;
-     display: flex;
-     align-items: center;
-     padding: 0 16px 0;
- }
+.appbar {
+    background: #E18071;
+    min-height: 56px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px 0;
+    position: fixed;
+    top: env(safe-area-inset-top, 0px);
+    left: 0;
+    filter: drop-shadow(0px 1.85px 6.25px rgba(0, 0, 0, 0.19));
+}
 
- .appbar__title {
-     font-size: 24px;
-     color: #fff;
-     font-weight: 700;
- }
+.appbar__title {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 700;
+}
 
- .content {
-     margin-top: 16px;
- }
+.content {
+    margin-top: 72px;
+}
 
- .container {
-     width: 100%;
-     padding-right: 16px;
-     padding-left: 16px;
-     margin-right: auto;
-     margin-left: auto;
- }
+.container {
+    width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-right: auto;
+    margin-left: auto;
+}
 
- .advert+.advert {
-     margin-top: 20px;
- }
+.advert+.advert {
+    margin-top: 20px;
+}
 
- .advert {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
- }
+.advert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
- .advert__title {
-     font-weight: 500;
- }
+.advert__title {
+    font-weight: 500;
+}
 
- .advert__button {
-     font-weight: 500;
-     height: 40px;
-     width: 100%;
-     background: #E18071;
-     font-weight: 500;
-     border-radius: 8px;
-     transition-duration: 200ms;
- }
+.advert__button {
+    font-weight: 500;
+    height: 40px;
+    width: 100%;
+    background: #E18071;
+    font-weight: 500;
+    border-radius: 8px;
+    transition-duration: 200ms;
+    color: #fff;
+}
 
- .advert__button:hover {
-     background: #BE5E4F;
- }
+.advert__button:hover {
+    background: #BE5E4F;
+}
 
- .advert__events {
-     font-size: 14px;
-     width: 100%;
- }
+.advert__events {
+    font-size: 14px;
+    width: 100%;
+    white-space: pre-line;
+    margin-bottom: 16px;
+}

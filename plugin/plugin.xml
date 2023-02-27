@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova.plugin.yabbiads" version="1.0.0"
+<plugin id="cordova.plugin.yabbiads" version="1.0.5"
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>YabbiAdsPlugin</name>
@@ -12,11 +12,16 @@
                 <param name="android-package" value="cordova.plugin.yabbiads.YabbiAdsPlugin" />
             </feature>
         </config-file>
-        <config-file parent="/*" target="AndroidManifest.xml" />
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!--optional -->
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!--optional -->
+        </config-file>
         <source-file src="src/android/YabbiAdsPlugin.java"
             target-dir="src/cordova/plugin/yabbiads/YabbiAdsPlugin" />
         <framework src="src/android/plugin.gradle" custom="true" type="gradleReference" />
-        <framework src="me.yabbi.ads:core:1.3.3" />
+        <framework src="me.yabbi.ads:core:1.3.4" />
     </platform>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
@@ -25,6 +30,7 @@
             </feature>
             <preference name="deployment-target" value="12.0" />
         </config-file>
+        <header-file src="src/ios/YabbiAdsPlugin.h" />
         <source-file src="src/ios/YabbiAdsPlugin.m" />
         <podspec>
             <pods use-frameworks="true">

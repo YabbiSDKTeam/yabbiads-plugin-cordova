@@ -34,13 +34,13 @@ function _initializeInterstitialListener() {
         _logEvent('onInterstitialLoaded');
     });
     window.addEventListener('onInterstitialLoadFailed', function (adInfo) {
-        _logEvent('onInterstitialLoadFailed');
+        _logEvent(`onInterstitialLoadFailed - ${adInfo.error}`);
     });
     window.addEventListener('onInterstitialShown', function (adInfo) {
         _logEvent('onInterstitialShown');
     });
     window.addEventListener('onInterstitialShowFailed', function (adInfo) {
-        _logEvent('onInterstitialShowFailed');
+        _logEvent(`onInterstitialShowFailed - ${adInfo.error}`);
     });
     window.addEventListener('onInterstitialClosed', function (adInfo) {
         _logEvent('onInterstitialClosed');
@@ -53,13 +53,13 @@ function _initializeRewardedListener() {
         _logEvent('onRewardedLoaded');
     });
     window.addEventListener('onRewardedLoadFailed', function (adInfo) {
-        _logEvent('onRewardedLoadFailed');
+        _logEvent(`onRewardedLoadFailed - ${adInfo.error}`);
     });
     window.addEventListener('onRewardedShown', function (adInfo) {
         _logEvent('onRewardedShown');
     });
     window.addEventListener('onRewardedShowFailed', function (adInfo) {
-        _logEvent('onRewardedShowFailed');
+        _logEvent(`onRewardedShowFailed - ${adInfo.error}`);
     });
     window.addEventListener('onRewardedClosed', function (adInfo) {
         _logEvent('onRewardedClosed');
@@ -95,5 +95,5 @@ function _destroyRewarded() {
 
 function _logEvent(message) {
     var logger = document.getElementById('logger');
-    logger.textContent = '${logger.innerHTML}\n ${message}'
+    logger.textContent = `${logger.innerHTML}\n ${message}`;
 }
