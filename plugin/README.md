@@ -229,7 +229,7 @@ const AdType = {
 
 * `WKJavaScriptController` does not specify a Swift version and none of the targets.
     
-    Для устранения ошибки введите в терминале команду `cordova prepare`. Затем перейдите в папку your_app/platforms/ios. И сделайте `pod install`.
+    Для устранения ошибки введите в терминале команду `cordova prepare`. Затем перейдите в папку `platforms/ios`. И сделайте `pod install`.
 
 
 *  Ошибка при запуске `Symbol not found`:
